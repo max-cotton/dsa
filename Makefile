@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -Wall
+CXXFLAGS = -Wall -I./include
 SRCDIR = ./src
 BUILDDIR = ./build
 SOURCES = $(wildcard $(SRCDIR)/*.cpp)  # wildcard expands all .cpp files into list of targets
