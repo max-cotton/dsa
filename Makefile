@@ -1,13 +1,19 @@
 CXX = c++
+CXXFLAGS = -Wall
+SRCDIR = src
+BUILDDIR = build
+SOURCES = $(wildcard $(SRCDIR)/*.cpp)  # wildcard expands into list of targets
+OBJECTS = $(SOURCES:$(SRCDIR)/%.cpp=$(BUILDDIR)/%.o)  # Iterate through SOURCES and change each file to build/file.o
+TARGET = main
 
-all: binary_tree graphs sorting_algorithms
+all: $(TARGET)
 
-binary_tree:
-	$(CXX) -o $@ $@.cpp
+$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp  # For any target that matches $(BUILDDIR)/%.o, replace % with the file
+	$(CXX) $(CXXFLAGS) -c $< -o $@  # Compile $(BUILDDIR)/%.o to $(SRCDIR)/%.cpp
 
-graphs:
-	$(CXX) -o $@ $@.cpp
+$(TARGET): $(OBJECTS)  # Require each object file target to be met
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(TARGET)  # Link all object files into target executable
 
-sorting_algorithms:
-	$(CXX) -o $@ $@.cpp
+clean:
+	rm build/*.o
 
