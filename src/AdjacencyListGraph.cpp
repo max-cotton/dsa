@@ -28,11 +28,25 @@ void AdjacencyListGraph::breadth_first_traversal (std::string node) {
 	}
 }
 
+void AdjacencyListGraph::depth_first_traversal (std::string node) {
+	visited.push_back(node);
+	std::cout << node << std::endl;
+	for (std::string adjacent : nodes[node]) {
+		auto i = std::find(visited.begin(), visited.end(), adjacent);
+		if (i == visited.end()) {
+			depth_first_traversal(adjacent);
+		}
+	}
+}
+
 void AdjacencyListGraph::traverse (std::string traversal_type) {
 	visited = {};
 	if (traversal_type == std::string ("breadth")) {
 		std::cout << std::string ("Breadth First Traversal:") << std::endl;
 		breadth_first_traversal(std::string ("A"));
+	} else if (traversal_type == std::string ("depth")) {
+		std::cout << std::string ("Depth First Traversal:") << std::endl;
+		depth_first_traversal(std::string ("A"));
 	}
 	visited = {};
 }

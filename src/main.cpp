@@ -1,9 +1,10 @@
 #include "binary_tree.h"
 #include "AdjacencyListGraph.h"
 #include "sorting_algorithms.h"
+#include <iostream>
+#include <string>
 #include <unordered_map>
 #include <vector>
-#include <string>
 
 int main (int argc, char* argv []) {
 	AdjacencyListGraph adjacency_list_graph (std::unordered_map<std::string, std::vector<std::string>> ({{"A", {"D", "B"}},
@@ -14,6 +15,8 @@ int main (int argc, char* argv []) {
 				  {"F", {"B", "C"}}
 			      }));
 	adjacency_list_graph.traverse(std::string ("breadth"));
+	std::cout << std::endl;
+	adjacency_list_graph.traverse(std::string ("depth"));
 	return 0;
 }
 
