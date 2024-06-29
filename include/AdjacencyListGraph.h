@@ -1,5 +1,5 @@
-#ifndef ADJACENCYLISTGRAPH_H  // Stops multiple inclusions of header file
-#define ADJACENCYLISTGRAPH_H
+#ifndef ADJACENCY_LIST_GRAPH_H  // Stops multiple inclusions of header file
+#define ADJACENCY_LIST_GRAPH_H
 
 #include <unordered_map>
 #include <vector>

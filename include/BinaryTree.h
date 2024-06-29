@@ -1,5 +1,5 @@
-#ifndef BINARYTREE_H
-#define BINARYTREE_H
+#ifndef BINARY_TREE_H
+#define BINARY_TREE_H
 
 #include <vector>
 
