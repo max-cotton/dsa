@@ -6,6 +6,7 @@
 namespace SortingAlgorithms {
 
 	void bubble_sort (std::vector<int>& numbers);
+	void insertion_sort (std::vector<int>& numbers);
 
 }
 

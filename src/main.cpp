@@ -33,7 +33,7 @@ int main (int argc, char* argv []) {
 	std::cout << std::endl;
 
 	std::vector<int> numbers = {4, 1, 19, 10, -3, 0, 2, 7, 8, 15, 9};
-	SortingAlgorithms::bubble_sort(numbers);
+	SortingAlgorithms::insertion_sort(numbers);
 	std::cout << std::string ("Sorted numbers:") << std::endl;
 	for (int number : numbers) {
 		std::cout << number << std::endl;
