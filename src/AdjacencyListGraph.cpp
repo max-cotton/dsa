@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 
-AdjacencyListGraph::AdjacencyListGraph (std::unordered_map<std::string, std::vector<std::string>> nodes) {
+AdjacencyListGraph::AdjacencyListGraph (AdjacencyList nodes) {
 	this->nodes = nodes;
 }
 

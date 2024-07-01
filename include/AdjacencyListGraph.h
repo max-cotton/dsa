@@ -5,13 +5,15 @@
 #include <vector>
 #include <string>
 
+typedef std::unordered_map<std::string, std::vector<std::string>> AdjacencyList;
+
 class AdjacencyListGraph {
 	public:
-		AdjacencyListGraph (std::unordered_map<std::string, std::vector<std::string>> nodes);
+		AdjacencyListGraph (AdjacencyList nodes);
 		void breadth_first_traversal (std::string node);
 		void depth_first_traversal (std::string node);
 		void traverse (std::string traversal_type);
-		std::unordered_map<std::string, std::vector<std::string>> nodes;
+		AdjacencyList nodes;
 		std::vector<std::string> visited;
 };
 
