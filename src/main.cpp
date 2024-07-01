@@ -1,5 +1,6 @@
-#include "BinaryTree.h"
 #include "AdjacencyListGraph.h"
+#include "BinaryTree.h"
+#include "GraphAlgorithms.h"
 #include "SortingAlgorithms.h"
 #include <iostream>
 #include <string>
@@ -30,6 +31,18 @@ int main (int argc, char* argv []) {
 	std::cout << std::endl;
 	std::cout << std::string ("Postorder traversal:") << std::endl;
 	binary_tree.postorder_traversal(0);
+	std::cout << std::endl;
+
+	WeightedAdjacencyList weighted_adjacency_list ({{"s",{{"a",8},{"b",4}}},
+												   {"a",{{"b",4}}},
+												   {"b",{{"a",3},{"c",2},{"d",5}}},
+												   {"c",{{"d",2}}},
+												   {"d",{}}});
+	std::cout << std::string ("Greedy Heuristic:") << std::endl;
+	std::vector<std::string> visited = GraphAlgorithms::greedy_heuristic(weighted_adjacency_list, std::string ("s"));
+	for (std::string i : visited) {
+		std::cout << i << std::endl;
+	}
 	std::cout << std::endl;
 
 	std::vector<int> numbers = {4, 1, 19, 10, -3, 0, 2, 7, 8, 15, 9};
