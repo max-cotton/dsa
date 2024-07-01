@@ -1,6 +1,13 @@
 #include "SortingAlgorithms.h"
 #include <algorithm>
 
+template <typename T>
+std::vector<T> operator + (const std::vector<T>& a, const std::vector<T>& b) {
+	std::vector<T> result = a;
+	result.insert(result.end(), b.begin(), b.end());
+	return result;
+}
+
 namespace SortingAlgorithms {
 	void bubble_sort (std::vector<int>& numbers) {
 		bool swapping = true;
@@ -32,6 +39,29 @@ namespace SortingAlgorithms {
 			}
 		}
 		numbers = ordered_numbers;
+	}
+
+	std::vector<int> quick_sort (std::vector<int> numbers) {
+		int pivot = numbers.size() - 1;
+		std::vector<int> less, equal, more;
+		for (int i=0; i<pivot; i++) {
+			if (numbers[i] < numbers[pivot]) {
+				less.push_back(numbers[i]);
+			}
+			else if (numbers[i] > numbers[pivot]) {
+				more.push_back(numbers[i]);
+			}
+			else if (numbers[i] == numbers[pivot]) {
+				equal.push_back(numbers[i]);
+			}
+		}
+		if (less.size() > 1) {
+			less = quick_sort(less);
+		}
+		if (more.size() > 1) {
+			more = quick_sort(more);
+		}
+		return less + std::vector<int>{numbers[pivot]} + equal + more;
 	}
 }
 
