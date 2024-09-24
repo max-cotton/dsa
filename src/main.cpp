@@ -1,6 +1,7 @@
 #include "AdjacencyListGraph.h"
 #include "BinaryTree.h"
 #include "GraphAlgorithms.h"
+#include "SearchingAlgorithms.h"
 #include "SortingAlgorithms.h"
 #include <iostream>
 #include <string>
@@ -51,6 +52,10 @@ int main (int argc, char* argv []) {
 	for (int number : sorted_numbers) {
 		std::cout << number << std::endl;
 	}
+	std::cout << std::endl;
+
+	int index = 2;
+	SearchingAlgorithms::binary_search(sorted_numbers, sorted_numbers[index], 0, sorted_numbers.size() - 1);
 
 	return 0;
 }
