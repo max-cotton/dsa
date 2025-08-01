@@ -9,7 +9,7 @@ Basic implementations of useful data structures and algorithms, mainly for revis
 1. Download the Repository with:
 
    - ```
-     git clone https://github.com/mcttn22/dsa.git
+     git clone https://github.com/max-cotton/dsa.git
      ```
    -  Or by downloading as a ZIP file
 
